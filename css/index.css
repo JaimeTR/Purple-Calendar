@@ -52,6 +52,10 @@ body {
 	margin: 1em;
 }
 
+.go-date:hover {
+	background-color: var(--purple-3);
+}
+
 .calendar {
 	width: 50vw;
 	height: 70vh;
