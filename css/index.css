@@ -92,7 +92,6 @@ body {
 	font-weight: bold;
 	font-size: 2em;
 	cursor: pointer;
-	border-radius: 0.5em;
 }
 
 .title button:hover {
@@ -113,7 +112,6 @@ body {
 
 .week-day {
 	color: var(--purple-6);
-	background-color: rgba(255, 255, 255, 0.05);
 }
 
 .month-day {
