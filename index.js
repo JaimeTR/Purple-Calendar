@@ -32,13 +32,13 @@ const setCalendar = () => {
 	// Add week days
 	let weekDays = "";
 	for (let i = 0; i < 7; i++) {
-		weekDays += `<div>${weekDaysNames[i]}</div>`;
+		weekDays += `<div class="week-day">${weekDaysNames[i].toUpperCase().substring(0, 3)}</div>`;
 	}
 
 	// Add month days
 	let monthDays = "";
 	for (let i = 0; i < monthDaysNumbers[month - 1]; i++) {
-		monthDays += `<div>${i + 1}</div>`;
+		monthDays += `<div class="month-day">${i + 1}</div>`;
 	}
 
 	monthContainer.innerHTML = weekDays + monthDays;

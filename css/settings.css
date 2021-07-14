@@ -12,4 +12,6 @@
 	--purple-5: #a16eff;
 
 	--shadow: 0 0 15px 5px var(--medium-gray);
+
+	--main-font-family: "Roboto", sans-serif;
 }
