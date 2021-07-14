@@ -1,0 +1,85 @@
+@import url(settings.css);
+
+* {
+	outline: 0;
+}
+
+body {
+	background-color: var(--light-gray);
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.date-input {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.day-input,
+.month-input,
+.year-input {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.calendar {
+	width: 50vw;
+	height: 50vh;
+	background-color: var(--white);
+	padding: 1em;
+	border-radius: 0.5em;
+	box-shadow: var(--shadow);
+	display: grid;
+	grid-template-rows: 1fr 5fr;
+}
+
+.title {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+.title p {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: var(--black);
+}
+
+.title button {
+	background-color: transparent;
+	border: none;
+	height: 100%;
+	color: var(--purple-3);
+	font-weight: bold;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+.month {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+}
+
+.month > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.text-input,
+.select-input {
+	background-color: var(--white);
+	border: none;
+	padding: 1em;
+	border-radius: 0.3em;
+	width: 100%;
+}

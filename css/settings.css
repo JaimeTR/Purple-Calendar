@@ -1,0 +1,15 @@
+:root {
+	--black: #333;
+	--gray: #555;
+	--medium-gray: #ddd;
+	--light-gray: #eee;
+	--white: #fefefe;
+
+	--purple-1: #371180;
+	--purple-2: #503780;
+	--purple-3: #591bcc;
+	--purple-4: #6d21ff;
+	--purple-5: #a16eff;
+
+	--shadow: 0 0 15px 5px var(--medium-gray);
+}
