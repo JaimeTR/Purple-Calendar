@@ -9,9 +9,9 @@ const dayValue = document.getElementById("day-value");
 const yearValue = document.getElementById("year-value");
 
 // CONSTANTS
-const monthsNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const weekDaysNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-const monthDaysNumbers = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const WEEK_DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+const MONTH_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 // VARIABLES
 let date = new Date();
@@ -22,43 +22,37 @@ let year = date.getFullYear();
 // Add months options
 let monthOptions = "";
 for (let i = 0; i < 12; i++) {
-	monthOptions += `<option value=${i + 1}>${monthsNames[i]}</option>`;
+	monthOptions += `<option value=${i + 1}>${MONTHS[i]}</option>`;
 }
-monthOptionsContainer.innerHTML = monthOptions;
-
-// Know month start day
-const getStartDay = (month, year) => {
-	const date = new Date(year, month - 1, 1);
-	return date.getDay();
-};
-
-// Set leap year
-const setLeap = () => {
-	let isLeap = year % 400 === 0 ? true : year % 100 === 0 ? false : year % 4 === 0;
-	monthDaysNumbers[1] = isLeap ? 29 : 28;
-};
-
-setLeap();
+monthOptionsContainer.innerHTML += monthOptions;
 
 // Set calendar settings
-const setCalendar = () => {
+const setCalendar = (month, year) => {
+	// Set leap year
+	let isLeap = year % 400 === 0 ? true : year % 100 === 0 ? false : year % 4 === 0;
+	MONTH_DAYS[1] = isLeap ? 29 : 28;
+
+	// Get month start day
+	const date = new Date(year, month - 1, 1);
+	let startDate = date.getDay();
+
 	// Add week days
 	let weekDays = "";
 	for (let i = 0; i < 7; i++) {
-		weekDays += `<div class="week-day">${weekDaysNames[i].toUpperCase().substring(0, 3)}</div>`;
+		weekDays += `<div class="week-day">${WEEK_DAYS[i].toUpperCase().substring(0, 3)}</div>`;
 	}
 
 	// Add month days
-	let monthDays = `<div class="month-day" style="grid-column-start:${getStartDay(month, year)};">1</div>`;
-	for (let i = 1; i < monthDaysNumbers[month - 1]; i++) {
+	let monthDays = `<div class="month-day" style="grid-column-start:${startDate};">1</div>`;
+	for (let i = 1; i < MONTH_DAYS[month - 1]; i++) {
 		monthDays += `<div class="month-day">${i + 1}</div>`;
 	}
 
 	monthContainer.innerHTML = weekDays + monthDays;
-	monthYearContainer.innerHTML = `${monthsNames[month - 1]} ${year}`;
+	monthYearContainer.innerHTML = `${MONTHS[month - 1]} ${year}`;
 };
 
-setCalendar();
+setCalendar(month, year);
 
 // Go to previus month
 leftButtonElement.addEventListener("click", (e) => {
@@ -68,8 +62,7 @@ leftButtonElement.addEventListener("click", (e) => {
 	} else {
 		month -= 1;
 	}
-	setLeap();
-	setCalendar();
+	setCalendar(month, year);
 });
 
 // Go to next month
@@ -80,14 +73,12 @@ rightButtonElement.addEventListener("click", (e) => {
 	} else {
 		month += 1;
 	}
-	setLeap();
-	setCalendar();
+	setCalendar(month, year);
 });
 
 goDateElement.addEventListener("click", (e) => {
-	day = dayValue.value;
-	month = monthOptionsContainer.value;
-	year = yearValue.value;
-	setLeap();
-	setCalendar();
+	day = dayValue.value ? dayValue.value : day;
+	month = monthOptionsContainer.value ? monthOptionsContainer.value : month;
+	year = yearValue.value ? yearValue.value : year;
+	setCalendar(month, year);
 });
