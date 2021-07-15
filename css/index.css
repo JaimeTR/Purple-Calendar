@@ -32,9 +32,6 @@ header {
 	align-items: center;
 	justify-content: space-between;
 	color: var(--white);
-	/* min-width: 20vw; */
-	/* padding: 1em; */
-	/* margin: 1em; */
 }
 
 .date-input > p {
@@ -68,7 +65,7 @@ header {
 }
 
 .calendar {
-	width: 60%;
+	width: 40%;
 	min-width: 500px;
 	background-color: rgba(255, 255, 255, 0.1);
 	padding: 1em;
@@ -118,6 +115,7 @@ header {
 
 .week-day {
 	color: var(--purple-6);
+	opacity: 0.5;
 }
 
 .month-day {
@@ -150,6 +148,10 @@ header {
 		min-width: 400px;
 		height: 400px;
 	}
+
+	.month-day {
+		opacity: 0.8;
+	}
 }
 
 @media (max-width: 500px) {
@@ -163,6 +165,10 @@ header {
 	.calendar {
 		min-width: 300px;
 		height: 300px;
+	}
+
+	.month-day {
+		font-size: 0.9em;
 	}
 }
 
