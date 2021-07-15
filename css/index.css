@@ -14,25 +14,16 @@ body {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 }
 
 header {
-	color: var(--purple-6);
+	color: var(--purple-5);
 	font-family: var(--title-font-family);
 	font-size: 3em;
 	font-weight: bold;
-	padding: 1em 0 0 0;
-}
-
-.body {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	flex-wrap: wrap;
+	padding: 1em 0;
 }
 
 .date-input {
@@ -41,9 +32,9 @@ header {
 	align-items: center;
 	justify-content: space-between;
 	color: var(--white);
-	min-width: 20vw;
-	padding: 1em;
-	margin: 1em;
+	/* min-width: 20vw; */
+	/* padding: 1em; */
+	/* margin: 1em; */
 }
 
 .date-input > p {
@@ -77,11 +68,10 @@ header {
 }
 
 .calendar {
-	width: 40%;
+	width: 60%;
 	min-width: 500px;
 	background-color: rgba(255, 255, 255, 0.1);
 	padding: 1em;
-	margin: 1em;
 	border-radius: 0.5em;
 	display: grid;
 	grid-template-rows: 1fr 5fr;
@@ -158,16 +148,21 @@ header {
 @media (max-width: 600px) {
 	.calendar {
 		min-width: 400px;
-	}
-
-	.date-input > p {
-		font-size: 1.7em;
+		height: 400px;
 	}
 }
 
-@media (max-width: 470px) {
+@media (max-width: 500px) {
+	.calendar {
+		min-width: 350px;
+		height: 350px;
+	}
+}
+
+@media (max-width: 430px) {
 	.calendar {
 		min-width: 300px;
+		height: 300px;
 	}
 }
 
@@ -177,6 +172,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 1em 0;
 }
 
 footer a:hover {
