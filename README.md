@@ -1,3 +1,3 @@
 # Simple-Calendar
 
-This app can be found [here](https://simple-purple-calendar.netlify.app/).
+This app can be found [here](https://purple-calendar.netlify.app/).

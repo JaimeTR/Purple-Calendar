@@ -1,16 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
 @import url("normalize.css");
 @import url("settings.css");
 
 * {
 	outline: 0;
-	font-family: var(--main-font-family);
+	font-family: var(--body-font-family);
 }
 
 body {
 	background-color: var(--dark-blue);
 	width: 100vw;
 	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+header {
+	color: var(--purple-6);
+	font-family: var(--title-font-family);
+	font-size: 3em;
+	font-weight: bold;
+	padding: 1em 0 0 0;
+}
+
+.body {
+	width: 100%;
+	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -143,7 +161,7 @@ body {
 	}
 
 	.date-input > p {
-		font-size: 1.5em;
+		font-size: 1.7em;
 	}
 }
 
@@ -151,4 +169,21 @@ body {
 	.calendar {
 		min-width: 300px;
 	}
+}
+
+footer {
+	color: var(--gray-4);
+	opacity: 0.5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+footer a {
+	color: var(--purple-5);
+	text-decoration: none;
 }
