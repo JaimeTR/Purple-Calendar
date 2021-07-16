@@ -21,6 +21,6 @@
 
 	--shadow: 0 0 15px 5px var(--medium-gray);
 
-	--title-font-family: "Dancing Script", cursive;
+	--title-font-family: "Dancing Script", sans-serif;
 	--body-font-family: "Roboto", sans-serif;
 }

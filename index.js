@@ -1,11 +1,8 @@
 // ELEMENTS
-const monthOptionsContainer = document.getElementById("select-input");
-const monthContainer = document.getElementById("month");
-const monthYearContainer = document.getElementById("month-year");
+const monthContainer = document.getElementById("month-container");
 const leftButtonElement = document.getElementById("left-button");
 const rightButtonElement = document.getElementById("right-button");
-const goDateElement = document.getElementById("go-date");
-const dayValue = document.getElementById("day-value");
+const monthValue = document.getElementById("month-value");
 const yearValue = document.getElementById("year-value");
 
 // CONSTANTS
@@ -18,13 +15,6 @@ let date = new Date();
 let day = date.getDate();
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
-
-// // Add months options
-// let monthOptions = "";
-// for (let i = 0; i < 12; i++) {
-// 	monthOptions += `<option value=${i + 1}>${MONTHS[i]}</option>`;
-// }
-// monthOptionsContainer.innerHTML += monthOptions;
 
 // Set calendar settings
 const setCalendar = (month, year) => {
@@ -49,7 +39,8 @@ const setCalendar = (month, year) => {
 	}
 
 	monthContainer.innerHTML = weekDays + monthDays;
-	monthYearContainer.innerHTML = `${MONTHS[month - 1]} ${year}`;
+	monthValue.innerHTML = `${MONTHS[month - 1]} `;
+	yearValue.value = `${year}`;
 };
 
 setCalendar(month, year);
@@ -75,10 +66,3 @@ rightButtonElement.addEventListener("click", (e) => {
 	}
 	setCalendar(month, year);
 });
-
-// goDateElement.addEventListener("click", (e) => {
-// 	day = dayValue.value ? dayValue.value : day;
-// 	month = monthOptionsContainer.value ? monthOptionsContainer.value : month;
-// 	year = yearValue.value ? yearValue.value : year;
-// 	setCalendar(month, year);
-// });

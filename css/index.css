@@ -26,44 +26,6 @@ header {
 	padding: 1em 0;
 }
 
-.date-input {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	color: var(--white);
-}
-
-.date-input > p {
-	font-size: 2em;
-	font-weight: bold;
-	color: var(--purple-7);
-}
-
-.day-input,
-.month-input,
-.year-input {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.go-date {
-	border: none;
-	background-color: var(--purple-1);
-	color: var(--white);
-	font-weight: bold;
-	cursor: pointer;
-	width: 100%;
-	padding: 1em;
-	margin: 1em;
-}
-
-.go-date:hover {
-	background-color: var(--purple-3);
-}
-
 .calendar {
 	width: 40%;
 	min-width: 500px;
@@ -78,15 +40,10 @@ header {
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
+	padding: 1em;
 }
 
-.title p {
-	font-size: 1.5em;
-	font-weight: bold;
-	color: var(--purple-5);
-}
-
-.title button {
+.title > button {
 	background-color: transparent;
 	border: none;
 	height: 100%;
@@ -97,9 +54,60 @@ header {
 	cursor: pointer;
 }
 
-.title button:hover {
-	background-color: var(--purple-1);
+.title > button:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+	color: var(--purple-6);
+}
+
+.month-year-values {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	height: 100%;
+}
+
+.month-value,
+.year-value {
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
 	color: var(--purple-5);
+	font-size: 2em;
+	cursor: pointer;
+	padding: 0.1em 0.3em;
+	border-radius: 0.2em;
+	font-weight: bold;
+}
+
+.month-value:hover,
+.year-value:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+	color: var(--purple-6);
+}
+
+.month-value {
+	text-align: end;
+	width: auto;
+}
+
+.year-value {
+	text-align: start;
+	width: 2.5em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.year-value:focus {
+	background-color: var(--purple-5);
+	color: var(--purple-1);
 }
 
 .month {
@@ -130,19 +138,6 @@ header {
 	font-weight: bold;
 }
 
-.text-input,
-.select-input {
-	background-color: var(--white);
-	border: 3px solid var(--white);
-	padding: 0.5em;
-	border-radius: 0.3em;
-	width: 50%;
-}
-
-.text-input:focus {
-	border: 3px solid var(--purple-5);
-}
-
 @media (max-width: 600px) {
 	.calendar {
 		min-width: 400px;
@@ -152,12 +147,26 @@ header {
 	.month-day {
 		opacity: 0.8;
 	}
+
+	.month-value,
+	.year-value {
+		font-size: 1.7em;
+	}
 }
 
 @media (max-width: 500px) {
 	.calendar {
 		min-width: 350px;
 		height: 350px;
+	}
+
+	.month {
+		font-size: 0.9em;
+	}
+
+	.month-value,
+	.year-value {
+		font-size: 1.5em;
 	}
 }
 
@@ -167,8 +176,13 @@ header {
 		height: 300px;
 	}
 
-	.month-day {
-		font-size: 0.9em;
+	.month {
+		font-size: 0.8em;
+	}
+
+	.month-value,
+	.year-value {
+		font-size: 1.3em;
 	}
 }
 

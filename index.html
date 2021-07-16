@@ -4,38 +4,23 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Simple Calendar</title>
+		<title>Purple Calendar</title>
 		<link rel="stylesheet" href="css/index.css" />
 	</head>
 	<body>
 		<header>Purple Calendar</header>
-		<!-- <div class="date-input">
-			<p>Go to a specific date!</p>
-			<div class="day-input">
-				<p>Day</p>
-				<input class="text-input" type="number" id="day-value" />
-			</div>
-			<div class="month-input">
-				<p>Month</p>
-				<select name="" id="select-input" class="select-input">
-					<option></option>
-				</select>
-			</div>
-			<div class="year-input">
-				<p>Year</p>
-				<input class="text-input" type="number" id="year-value" />
-			</div>
-			<input class="go-date" type="submit" value="Go" id="go-date" />
-		</div> -->
 		<div class="calendar">
 			<div class="title">
 				<button id="left-button"><</button>
-				<p id="month-year"></p>
+				<div class="month-year-values">
+					<button class="month-value" id="month-value"></button>
+					<input type="number" class="year-value" id="year-value"></input>
+				</div>
 				<button id="right-button">></button>
 			</div>
-			<div class="month" id="month"></div>
+			<div class="month" id="month-container"></div>
 		</div>
-		<footer class="centered">
+		<footer>
 			<p>Made with 💜 by <a href="https://github.com/paladinescamila">Camila Paladines</a></p>
 		</footer>
 	</body>
