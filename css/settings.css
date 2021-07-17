@@ -19,6 +19,9 @@
 
 	--dark-blue: #00092c;
 
+	--transparent-0: rgba(0, 0, 0, 0);
+	--transparent-1: rgba(0, 0, 0, 0.2);
+
 	--shadow: 0 0 15px 5px var(--medium-gray);
 
 	--title-font-family: "Dancing Script", sans-serif;

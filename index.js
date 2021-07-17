@@ -38,6 +38,7 @@ const setCalendar = (month, year) => {
 		monthDays += `<div class="month-day">${i + 1}</div>`;
 	}
 
+	monthContainer.style.gridTemplateColumns = "repeat(7, 1fr)";
 	monthContainer.innerHTML = weekDays + monthDays;
 	monthValue.innerHTML = `${MONTHS[month - 1]} `;
 	yearValue.value = `${year}`;
@@ -66,3 +67,31 @@ rightButtonElement.addEventListener("click", (e) => {
 	}
 	setCalendar(month, year);
 });
+
+monthValue.addEventListener("click", (e) => {
+	let monthNames = "";
+	for (let i = 0; i < 12; i++) {
+		monthNames += `<div id="${MONTHS[i].toLowerCase()}" class="month-name">${MONTHS[i].substring(0, 3)}</div>`;
+	}
+
+	monthContainer.style.gridTemplateColumns = "repeat(4, 1fr)";
+	monthContainer.innerHTML = monthNames;
+
+	document.getElementById("january").addEventListener("click", () => monthButton(1));
+	document.getElementById("february").addEventListener("click", () => monthButton(2));
+	document.getElementById("march").addEventListener("click", () => monthButton(3));
+	document.getElementById("april").addEventListener("click", () => monthButton(4));
+	document.getElementById("may").addEventListener("click", () => monthButton(5));
+	document.getElementById("june").addEventListener("click", () => monthButton(6));
+	document.getElementById("july").addEventListener("click", () => monthButton(7));
+	document.getElementById("august").addEventListener("click", () => monthButton(8));
+	document.getElementById("september").addEventListener("click", () => monthButton(9));
+	document.getElementById("october").addEventListener("click", () => monthButton(10));
+	document.getElementById("november").addEventListener("click", () => monthButton(11));
+	document.getElementById("december").addEventListener("click", () => monthButton(12));
+});
+
+const monthButton = (monthId) => {
+	month = monthId;
+	setCalendar(month, year);
+};

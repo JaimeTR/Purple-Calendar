@@ -55,7 +55,7 @@ header {
 }
 
 .title > button:hover {
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: var(--transparent-1);
 	color: var(--purple-6);
 }
 
@@ -70,7 +70,7 @@ header {
 .month-value,
 .year-value {
 	border: none;
-	background-color: rgba(0, 0, 0, 0);
+	background-color: var(--transparent-0);
 	color: var(--purple-5);
 	font-size: 2em;
 	cursor: pointer;
@@ -81,7 +81,7 @@ header {
 
 .month-value:hover,
 .year-value:hover {
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: var(--transparent-1);
 	color: var(--purple-6);
 }
 
@@ -112,7 +112,6 @@ input[type="number"] {
 
 .month {
 	display: grid;
-	grid-template-columns: repeat(7, 1fr);
 }
 
 .month > div {
@@ -136,6 +135,36 @@ input[type="number"] {
 .month-day:hover {
 	background-color: var(--purple-4);
 	font-weight: bold;
+}
+
+.month-name {
+	color: var(--gray-7);
+	cursor: pointer;
+	border-radius: 0.3em;
+	font-size: 1.3em;
+}
+
+.month-name:hover {
+	background-color: var(--transparent-1);
+	font-weight: bold;
+}
+
+footer {
+	color: var(--gray-4);
+	opacity: 0.5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1em 0;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+footer a {
+	color: var(--purple-5);
+	text-decoration: none;
 }
 
 @media (max-width: 600px) {
@@ -184,22 +213,4 @@ input[type="number"] {
 	.year-value {
 		font-size: 1.3em;
 	}
-}
-
-footer {
-	color: var(--gray-4);
-	opacity: 0.5;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 1em 0;
-}
-
-footer a:hover {
-	text-decoration: underline;
-}
-
-footer a {
-	color: var(--purple-5);
-	text-decoration: none;
 }
