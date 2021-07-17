@@ -4,6 +4,7 @@ const leftButtonElement = document.getElementById("left-button");
 const rightButtonElement = document.getElementById("right-button");
 const monthValue = document.getElementById("month-value");
 const yearValue = document.getElementById("year-value");
+const goToday = document.getElementById("go-today");
 
 // CONSTANTS
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -12,7 +13,6 @@ const MONTH_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 // VARIABLES
 let date = new Date();
-let day = date.getDate();
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
 
@@ -102,4 +102,11 @@ yearValue.addEventListener("keyup", (e) => {
 		year = yearValue.value;
 		setCalendar(month, year);
 	}
+});
+
+goToday.addEventListener("click", (e) => {
+	date = new Date();
+	month = date.getMonth() + 1;
+	year = date.getFullYear();
+	setCalendar(month, year);
 });

@@ -19,11 +19,17 @@ body {
 }
 
 header {
-	color: var(--purple-5);
-	font-family: var(--title-font-family);
 	font-size: 3em;
-	font-weight: bold;
 	padding: 1em 0;
+}
+
+header > button {
+	border: none;
+	color: var(--purple-5);
+	background-color: var(--transparent-0);
+	font-family: var(--title-font-family);
+	font-weight: bold;
+	cursor: pointer;
 }
 
 .calendar {
