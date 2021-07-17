@@ -24,7 +24,7 @@ const setCalendar = (month, year) => {
 
 	// Get month start day
 	const date = new Date(year, month - 1, 1);
-	let startDate = date.getDay();
+	let startDate = date.getDay() !== 0 ? date.getDay() : 7;
 
 	// Add week days
 	let weekDays = "";
@@ -77,21 +77,29 @@ monthValue.addEventListener("click", (e) => {
 	monthContainer.style.gridTemplateColumns = "repeat(4, 1fr)";
 	monthContainer.innerHTML = monthNames;
 
-	document.getElementById("january").addEventListener("click", () => monthButton(1));
-	document.getElementById("february").addEventListener("click", () => monthButton(2));
-	document.getElementById("march").addEventListener("click", () => monthButton(3));
-	document.getElementById("april").addEventListener("click", () => monthButton(4));
-	document.getElementById("may").addEventListener("click", () => monthButton(5));
-	document.getElementById("june").addEventListener("click", () => monthButton(6));
-	document.getElementById("july").addEventListener("click", () => monthButton(7));
-	document.getElementById("august").addEventListener("click", () => monthButton(8));
-	document.getElementById("september").addEventListener("click", () => monthButton(9));
-	document.getElementById("october").addEventListener("click", () => monthButton(10));
-	document.getElementById("november").addEventListener("click", () => monthButton(11));
-	document.getElementById("december").addEventListener("click", () => monthButton(12));
+	document.getElementById("january").addEventListener("click", (e) => monthButton(1));
+	document.getElementById("february").addEventListener("click", (e) => monthButton(2));
+	document.getElementById("march").addEventListener("click", (e) => monthButton(3));
+	document.getElementById("april").addEventListener("click", (e) => monthButton(4));
+	document.getElementById("may").addEventListener("click", (e) => monthButton(5));
+	document.getElementById("june").addEventListener("click", (e) => monthButton(6));
+	document.getElementById("july").addEventListener("click", (e) => monthButton(7));
+	document.getElementById("august").addEventListener("click", (e) => monthButton(8));
+	document.getElementById("september").addEventListener("click", (e) => monthButton(9));
+	document.getElementById("october").addEventListener("click", (e) => monthButton(10));
+	document.getElementById("november").addEventListener("click", (e) => monthButton(11));
+	document.getElementById("december").addEventListener("click", (e) => monthButton(12));
 });
 
 const monthButton = (monthId) => {
 	month = monthId;
 	setCalendar(month, year);
 };
+
+yearValue.addEventListener("keyup", (e) => {
+	if (e.keyCode === 13) {
+		event.preventDefault();
+		year = yearValue.value;
+		setCalendar(month, year);
+	}
+});
