@@ -143,6 +143,10 @@ input[type="number"] {
 	font-weight: bold;
 }
 
+.is-today {
+	background-color: var(--purple-1);
+}
+
 .month-name {
 	color: var(--gray-7);
 	cursor: pointer;

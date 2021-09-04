@@ -25,6 +25,11 @@ const drawCalendar = () => {
 	date = new Date(year, month - 1, 1);
 	let startDate = date.getDay() === 0 ? 7 : date.getDay();
 
+	// Set if it's the current month and year
+	let today = new Date();
+	let isCurrent = (month === today.getMonth() + 1) & (year === today.getFullYear());
+	let todayMonthDay = today.getDate();
+
 	// Add week days
 	let weekDays = "";
 	for (let i = 0; i < 7; i++) {
@@ -34,7 +39,8 @@ const drawCalendar = () => {
 	// Add month days
 	let monthDays = `<div class="month-day" style="grid-column-start:${startDate};">1</div>`;
 	for (let i = 1; i < MONTH_DAYS[month - 1]; i++) {
-		monthDays += `<div class="month-day">${i + 1}</div>`;
+		let todayStyle = isCurrent & (i + 1 === todayMonthDay) ? " is-today" : "";
+		monthDays += `<div class="month-day${todayStyle}">${i + 1}</div>`;
 	}
 
 	// Draw items on the screen
