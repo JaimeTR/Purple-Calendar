@@ -1,4 +1,4 @@
-# Purple-Calendar
+# Purple Calendar
 
 This application can be found [here](https://purple-calendar.netlify.app/).
 
