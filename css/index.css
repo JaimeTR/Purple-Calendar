@@ -159,6 +159,10 @@ input[type="number"] {
 	font-weight: bold;
 }
 
+.left-button img, .right-button img {
+	width: 20px;
+}
+
 .signature {
 	font-family: monospace;
 	color: #fff;
@@ -182,6 +186,7 @@ input[type="number"] {
 	.calendar {
 		min-width: 400px;
 		height: 400px;
+		padding: 0.8em;
 	}
 
 	.month-day {
@@ -192,12 +197,16 @@ input[type="number"] {
 	.year-value {
 		font-size: 1.7em;
 	}
+	.left-button img, .right-button img {
+		width: 17px;
+	}
 }
 
 @media (max-width: 500px) {
 	.calendar {
 		min-width: 350px;
 		height: 350px;
+		padding: 0.7em;
 	}
 
 	.month {
@@ -207,6 +216,9 @@ input[type="number"] {
 	.month-value,
 	.year-value {
 		font-size: 1.5em;
+	}
+	.left-button img, .right-button img {
+		width: 15px;
 	}
 }
 
@@ -223,5 +235,8 @@ input[type="number"] {
 	.month-value,
 	.year-value {
 		font-size: 1.3em;
+	}
+	.left-button img, .right-button img {
+		width: 10px;
 	}
 }
