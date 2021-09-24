@@ -80,7 +80,7 @@ header > button {
 	color: var(--purple-5);
 	font-size: 2em;
 	cursor: pointer;
-	padding: 0.1em 0.3em;
+	padding: 0 0.3em;
 	border-radius: 0.2em;
 	font-weight: bold;
 }
@@ -157,6 +157,12 @@ input[type="number"] {
 .month-name:hover {
 	background-color: var(--transparent-1);
 	font-weight: bold;
+}
+
+.left-button, .right-button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .left-button img, .right-button img {
@@ -237,6 +243,6 @@ input[type="number"] {
 		font-size: 1.3em;
 	}
 	.left-button img, .right-button img {
-		width: 10px;
+		width: 13px;
 	}
 }
