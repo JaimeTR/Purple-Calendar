@@ -140,7 +140,6 @@ input[type="number"] {
 
 .month-day:hover {
 	background-color: var(--purple-4);
-	font-weight: bold;
 }
 
 .is-today {
@@ -156,7 +155,6 @@ input[type="number"] {
 
 .month-name:hover {
 	background-color: var(--transparent-1);
-	font-weight: bold;
 }
 
 .left-button, .right-button{
