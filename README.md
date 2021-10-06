@@ -2,8 +2,6 @@
 
 This is a simple monthly calendar that allows you to navigate between months. You can also go to a specific month and year. This app can be found [here](https://purple-calendar.netlify.app/).
 
-![photo](img/photo.png)
-
 ## How to use
 
 The following are the options you can do in the app:
