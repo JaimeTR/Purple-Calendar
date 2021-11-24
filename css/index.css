@@ -133,17 +133,16 @@ input[type="number"] {
 
 .month-day {
 	color: var(--gray-7);
-	cursor: pointer;
 	border-radius: 0.3em;
 	font-size: 1.1em;
 }
 
 .month-day:hover {
-	background-color: var(--purple-4);
+	background-color: var(--purple-1);
 }
 
 .is-today {
-	background-color: var(--purple-1);
+	background-color: var(--purple-4);
 }
 
 .month-name {
@@ -157,13 +156,15 @@ input[type="number"] {
 	background-color: var(--transparent-1);
 }
 
-.left-button, .right-button{
+.left-button,
+.right-button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-.left-button img, .right-button img {
+.left-button img,
+.right-button img {
 	width: 20px;
 }
 
@@ -201,7 +202,8 @@ input[type="number"] {
 	.year-value {
 		font-size: 1.7em;
 	}
-	.left-button img, .right-button img {
+	.left-button img,
+	.right-button img {
 		width: 17px;
 	}
 }
@@ -221,7 +223,8 @@ input[type="number"] {
 	.year-value {
 		font-size: 1.5em;
 	}
-	.left-button img, .right-button img {
+	.left-button img,
+	.right-button img {
 		width: 15px;
 	}
 }
@@ -240,7 +243,8 @@ input[type="number"] {
 	.year-value {
 		font-size: 1.3em;
 	}
-	.left-button img, .right-button img {
+	.left-button img,
+	.right-button img {
 		width: 13px;
 	}
 }

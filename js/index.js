@@ -100,11 +100,14 @@ monthValue.addEventListener("click", (e) => {
 // Pick a year
 yearValue.addEventListener("keyup", (e) => {
 	if (e.keyCode === 13) {
-		event.preventDefault();
+		yearValue.blur();
 		let newYear = Number(yearValue.value);
-		year = (newYear >= -271821) & (newYear <= 275760) ? newYear : year;
-		year = new Date(year, 0, 1).getFullYear();
-		drawCalendar();
+		if ((newYear >= -271821) & (newYear <= 275760)) {
+			year = newYear;
+			drawCalendar();
+		} else {
+			alert("Please enter a valid year.");
+		}
 	}
 });
 
